@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { SignUpButton, SignInButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -33,8 +33,8 @@ export default async function Home() {
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground">
             Turn long, unwieldy URLs into clean, shareable short links in
-            seconds. Monitor every click and manage all your links from a
-            single dashboard.
+            seconds. Monitor every click and manage all your links from a single
+            dashboard.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -43,11 +43,6 @@ export default async function Home() {
               Get started for free
             </Button>
           </SignUpButton>
-          <SignInButton mode="modal">
-            <Button variant="outline" size="lg" className="h-11 px-8 text-base">
-              Sign in
-            </Button>
-          </SignInButton>
         </div>
       </section>
 
