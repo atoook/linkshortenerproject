@@ -16,12 +16,29 @@ export async function getLinksByUserId(userId: string): Promise<Link[]> {
 export async function createLink(
   data: Pick<NewLink, "userId" | "originalUrl"> & { shortCode?: string },
 ): Promise<Link> {
-  const shortCode = data.shortCode ?? nanoid(8);
-  const [link] = await db
-    .insert(links)
-    .values({ ...data, shortCode })
-    .returning();
-  return link;
+  const MAX_RETRIES = 3;
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    const shortCode = data.shortCode ?? nanoid(8);
+    try {
+      const [link] = await db
+        .insert(links)
+        .values({ ...data, shortCode })
+        .returning();
+      return link;
+    } catch (err) {
+      // Only retry on unique constraint violations for auto-generated codes
+      const isUnique = err instanceof Error && err.message.includes("unique");
+      if (!isUnique || data.shortCode !== undefined) {
+        throw err;
+      }
+      if (attempt === MAX_RETRIES - 1) {
+        throw new Error(
+          "Failed to generate a unique short code. Please try again.",
+        );
+      }
+    }
+  }
+  throw new Error("Unexpected error creating link.");
 }
 
 export async function updateLink(

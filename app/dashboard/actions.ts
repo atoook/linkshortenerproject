@@ -5,7 +5,13 @@ import { z } from "zod";
 import { createLink, deleteLink, updateLink } from "@/data/links";
 
 const createLinkSchema = z.object({
-  originalUrl: z.string().url("Please enter a valid URL"),
+  originalUrl: z
+    .string()
+    .url("Please enter a valid URL")
+    .refine(
+      (url) => url.startsWith("https://") || url.startsWith("http://"),
+      "URL must use http or https",
+    ),
   customSlug: z
     .string()
     .max(32, "Slug must be 32 characters or fewer")
@@ -52,7 +58,13 @@ export async function createLinkAction(
 
 const updateLinkSchema = z.object({
   id: z.number().int(),
-  originalUrl: z.string().url("Please enter a valid URL"),
+  originalUrl: z
+    .string()
+    .url("Please enter a valid URL")
+    .refine(
+      (url) => url.startsWith("https://") || url.startsWith("http://"),
+      "URL must use http or https",
+    ),
   customSlug: z
     .string()
     .min(1, "Slug is required")
