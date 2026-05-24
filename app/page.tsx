@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { Link2, BarChart2, LayoutDashboard } from "lucide-react";
+import { Link2, Copy, LayoutDashboard } from "lucide-react";
 
 export default async function Home() {
   const { userId } = await auth();
@@ -28,13 +28,13 @@ export default async function Home() {
             Fast &amp; free link shortening
           </span>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Shorten links. Track results.{" "}
+            Shorten links. Share them anywhere.{" "}
             <span className="text-muted-foreground">All in one place.</span>
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground">
             Turn long, unwieldy URLs into clean, shareable short links in
-            seconds. Monitor every click and manage all your links from a single
-            dashboard.
+            seconds. Keep all your links organised and ready to copy from a
+            single dashboard.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -74,12 +74,12 @@ export default async function Home() {
             <Card>
               <CardHeader>
                 <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <BarChart2 className="size-5" />
+                  <Copy className="size-5" />
                 </div>
-                <CardTitle>Track every click</CardTitle>
+                <CardTitle>Share in seconds</CardTitle>
                 <CardDescription>
-                  See real-time click counts for each link so you always know
-                  how your content is performing.
+                  Copy your short links and drop them into messages, posts, and
+                  profiles without the clutter of a long URL.
                 </CardDescription>
               </CardHeader>
               <CardContent />
@@ -92,7 +92,7 @@ export default async function Home() {
                 <CardTitle>Manage with ease</CardTitle>
                 <CardDescription>
                   Your personal dashboard keeps all your short links organised.
-                  Copy, delete, or inspect them whenever you need.
+                  Copy or delete them whenever you need.
                 </CardDescription>
               </CardHeader>
               <CardContent />
