@@ -45,3 +45,9 @@ next-env.d.ts
 
 # temporary files
 tmp/
+
+# generated reports (charts, exports)
+/reports/
+
+# python venv
+**/.venv/
