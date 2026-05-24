@@ -38,7 +38,7 @@ export default async function Home() {
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <SignUpButton mode="modal">
+          <SignUpButton mode="modal" forceRedirectUrl="/dashboard">
             <Button size="lg" className="h-11 px-8 text-base">
               Get started for free
             </Button>

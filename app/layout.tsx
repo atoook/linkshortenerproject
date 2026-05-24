@@ -46,10 +46,10 @@ export default function RootLayout({
           <header className="w-full border-b border-border bg-background/80 px-6 py-4 backdrop-blur">
             <div className="mx-auto flex w-full max-w-5xl items-center justify-end gap-3">
               <Show when="signed-out">
-                <SignInButton mode="modal">
+                <SignInButton mode="modal" forceRedirectUrl="/dashboard">
                   <Button variant="outline">Sign in</Button>
                 </SignInButton>
-                <SignUpButton mode="modal">
+                <SignUpButton mode="modal" forceRedirectUrl="/dashboard">
                   <Button>Sign up</Button>
                 </SignUpButton>
               </Show>

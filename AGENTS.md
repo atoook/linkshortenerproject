@@ -22,6 +22,11 @@ This file is the entry point for LLM coding agents. All standards are mandatory 
 | [docs/auth.md](docs/auth.md) | Clerk v7 authentication conventions | Any auth, user, or session code   |
 | [docs/ui.md](docs/ui.md)     | shadcn/ui — all UI components       | Any component, layout, or UI code |
 
+## Critical — Next.js Middleware
+
+> [!WARNING]
+> **`middleware.ts` is deprecated and must NOT be used.** The version of Next.js in this project has replaced it with `proxy.ts`. All route-matching, auth guards, and request interception must be implemented in `proxy.ts`. Never create or modify a `middleware.ts` file.
+
 ## Quick Reference
 
 - **Runtime**: Node.js / Edge (per route)
