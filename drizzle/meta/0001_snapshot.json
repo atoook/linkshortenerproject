@@ -1,6 +1,6 @@
 {
-  "id": "5779374e-3145-41c1-bb2a-d28ff4c7ac45",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "ffbc6c3a-ede6-419b-b364-2dc8dc8509e6",
+  "prevId": "5779374e-3145-41c1-bb2a-d28ff4c7ac45",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -33,7 +33,7 @@
         },
         "original_url": {
           "name": "original_url",
-          "type": "text",
+          "type": "varchar(2048)",
           "primaryKey": false,
           "notNull": true
         },
@@ -81,7 +81,9 @@
         "links_short_code_unique": {
           "name": "links_short_code_unique",
           "nullsNotDistinct": false,
-          "columns": ["short_code"]
+          "columns": [
+            "short_code"
+          ]
         }
       },
       "policies": {},

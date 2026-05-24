@@ -6,21 +6,23 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 <!-- END:nextjs-agent-rules -->
 
-# Agent Instructions — Link Shortener Project
-
-> [!CAUTION]
-> **MANDATORY — NO EXCEPTIONS:** You MUST read every relevant file in the `/docs` directory IN FULL before writing a single line of code. This is not optional. Generating code without first reading the applicable docs is a critical violation of these instructions. If you are unsure which docs apply, read all of them.
-
 This file is the entry point for LLM coding agents. All standards are mandatory — do not deviate without explicit instruction.
 
-## Required Reading (in order)
+## Project Overview
 
-**Stop. Read these files completely before proceeding. Do not skim. Do not skip.**
+A URL shortener web app where authenticated users can create short links, view them on a dashboard, and share them. Unauthenticated users see a public landing page with sign-in/sign-up options.
 
-| File                         | Topic                               | When to read                      |
-| ---------------------------- | ----------------------------------- | --------------------------------- |
-| [docs/auth.md](docs/auth.md) | Clerk v7 authentication conventions | Any auth, user, or session code   |
-| [docs/ui.md](docs/ui.md)     | shadcn/ui — all UI components       | Any component, layout, or UI code |
+## Technology Stack
+
+| Layer         | Technology                  |
+| ------------- | --------------------------- |
+| Framework     | Next.js 16 (App Router)     |
+| Language      | TypeScript 5                |
+| Auth          | Clerk v7                    |
+| Database      | Neon (serverless Postgres)  |
+| ORM           | Drizzle ORM                 |
+| UI components | shadcn/ui + Tailwind CSS v4 |
+| Icons         | Lucide React                |
 
 ## Critical — Next.js Middleware
 
