@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying authentication in the project.
+---
+
 # Authentication — Clerk v7
 
 ## Rules
@@ -23,11 +27,11 @@
 
 ## Clerk Components & Hooks
 
-| Need                        | Use                                      |
-| --------------------------- | ---------------------------------------- |
-| Trigger sign-in modal       | `<SignInButton mode="modal">`            |
-| Trigger sign-up modal       | `<SignUpButton mode="modal">`            |
-| Display user avatar / menu  | `<UserButton>`                           |
-| Read auth state (server)    | `auth()` from `@clerk/nextjs/server`     |
-| Read auth state (client)    | `useAuth()` / `useUser()` from `@clerk/nextjs` |
-| Middleware protection       | `clerkMiddleware` from `@clerk/nextjs/server` |
+| Need                       | Use                                            |
+| -------------------------- | ---------------------------------------------- |
+| Trigger sign-in modal      | `<SignInButton mode="modal">`                  |
+| Trigger sign-up modal      | `<SignUpButton mode="modal">`                  |
+| Display user avatar / menu | `<UserButton>`                                 |
+| Read auth state (server)   | `auth()` from `@clerk/nextjs/server`           |
+| Read auth state (client)   | `useAuth()` / `useUser()` from `@clerk/nextjs` |
+| Middleware protection      | `clerkMiddleware` from `@clerk/nextjs/server`  |
